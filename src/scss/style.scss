@@ -8,16 +8,17 @@
     background: #040D21;
     height: 771px;
     position: relative;
+    &__container{
+        position: relative;
+        z-index: 3;
+    }
     &__flex {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
         padding-top: 45px;
         position: relative;
         z-index: 3;
-        & .menu{
-            display: flex;
-        }
     }
 
     &__contact {
@@ -26,6 +27,7 @@
         font-weight: 600;
         font-size: 17px;
         line-height: 21px;
+        margin-left: 45px;
         
     }
 
@@ -130,10 +132,12 @@
 
 .logo {
     width: 96.65px;
-height: 54.52px;
+    height: 54.52px;
+    position: absolute;
+    top: 45px;
 }
 .menu {
-    display: none;
+    display: flex;
     justify-content: space-between;
     &__list {
         padding: 0 25px;
@@ -365,22 +369,92 @@ height: 54.52px;
 
 
 
-
+.footer{
+    background: #040D21;
+    padding-top: 103px;
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    &__left{
+        width: 30%;
+    }
+    &__right{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 103px;
+        padding-bottom: 64px;
+    }
+    &__p{
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 130%;
+        color: #7C8696;
+    }
+    &__logo{
+        position: static;
+        margin-bottom: 38px;
+    }
+    &__document{
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    &__link{
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        color: $color-blue;
+    }
+    &__text{
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 140%;
+        text-align: center;
+        color: #FFFFFF;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &__contact{
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        color: #FFFFFF;
+        margin-bottom: 25px;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        &_right{
+            width: 45%;
+        }
+    }
+}
 
 
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .logo{
+        top: 25px;
+        left: 25px;
+    }
     .container{
         max-width: 768;
-        padding-left: 25px;
-        padding-right: 25px;
+        
     }
     .menu{
-        display: flex;
         background: rgb(50 132 255 / 15%);
         align-items: center;
         justify-content: space-around;
-        margin-top: 20px;
+        margin-top: 48px;
+        width: 100%;
         &__list{
             padding: 20px 0;
             font-size: 15px;
@@ -388,16 +462,23 @@ height: 54.52px;
     }
     .header{
         height: 1140px;
-
+        &__flex{
+            flex-direction: column;
+            align-items: flex-end;
+            flex-flow: column-reverse;
+            padding-top: 40px;
+        }
+        &__content{
+            padding-left: 25px;
+            padding-right: 25px;
+        }
         &__contact {
         flex-direction: row;
         font-size: 15px;
+        padding-right: 53px;
         }
         &__phone{
             margin-right: 35px;
-        }
-        &__flex .menu{
-            display: none;
         }
         &__li:last-of-type{
             margin-right: 0;
@@ -414,7 +495,10 @@ height: 54.52px;
         }
     }
 
-
+    .services{
+        padding-left: 25px;
+    padding-right: 25px;
+    }
     .order {
         flex-direction: column;
         border-radius: 0;
@@ -464,6 +548,8 @@ height: 54.52px;
 
     .car-park {
         height: 507px;
+        padding-left: 25px;
+        padding-right: 25px;
         &__flex{
             align-items: flex-start;
         }
@@ -484,4 +570,95 @@ height: 54.52px;
             right: 42px;   
         }
     }
+
+
+
+    .footer{
+        &__top{
+            padding-left: 25px;
+            padding-right: 25px;
+            flex-direction: column;
+            position: relative;
+        }
+        &__left{
+            position: absolute;
+            width: auto;
+        }
+        &__right{
+            flex-direction: column;
+            flex-flow: column-reverse;
+            align-items: flex-end;
+            padding-top: 16px;
+        }
+        &__bottom{
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 80px;
+            flex-flow: column-reverse;
+        }
+        &__contact{
+            margin-bottom: 20px;
+        }
+        &__item_right{
+            margin-bottom: 90px;
+            width: 38% !important;
+        }
+        &__item{
+            width: 100%;
+        }
+        &__text{
+            max-width: 496px;
+            align-self: center;
+        }
+        &__p{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 320px){
+    .footer{
+        width: 100%;
+        &__top{
+            padding-left: 15px;
+            padding-right: 15px;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__left{
+            width: 100%;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+        }
+        &__right{
+            flex-direction: column;
+            padding-top: 16px;
+        }
+        &__bottom{
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 80px;
+            flex-flow: column-reverse;
+        }
+        &__contact{
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+        &__item_right{
+            margin-bottom: 90px;
+            width: 100%;
+        }
+        &__item{
+            width: 100%;
+        }
+        &__text{
+            align-self: center;
+            font-size: 13px;
+        }
+        &__p{
+            margin-bottom: 20px;
+        }
+    }
+
 }
